@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciador de Tarefas</h1>
+        
+        <div class="content-container">
+            <!-- Formulário para criar/atualizar tarefas -->
+            <div class="form-container">
+                <h2 id="form-title">Nova Tarefa</h2>
+                <form id="task-form">
+                    <input type="hidden" id="task-id">
+                    
+                    <div class="form-group">
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descricao">Descrição:</label>
+                        <textarea id="descricao" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tipo">Tipo:</label>
+                        <select id="tipo" required>
+                            <option value="Pessoal">Pessoal</option>
+                            <option value="Profissional">Profissional</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary">Salvar</button>
+                        <button type="button" id="cancel-edit" class="btn-secondary" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Lista de tarefas -->
+            <div class="task-list-container">
+                <h2>Minhas Tarefas</h2>
+                <div class="task-filters">
+                    <button type="button" class="filter-btn active" data-filter="todas">Todas</button>
+                    <button type="button" class="filter-btn" data-filter="Pessoal">Pessoais</button>
+                    <button type="button" class="filter-btn" data-filter="Profissional">Profissionais</button>
+                </div>
+                <div id="tasks-container">
+                    <div class="loading">Carregando tarefas...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
